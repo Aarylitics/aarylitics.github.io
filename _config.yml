@@ -2,5 +2,5 @@ title: Aaryan Sharma
 logo:
 description: aspiring data scientist!
 show_downloads: yes
-#theme: jekflix
-remote_theme: pages-themes/dinky@v0.2.0
+theme: jekflix
+#remote_theme: pages-themes/dinky@v0.2.0
