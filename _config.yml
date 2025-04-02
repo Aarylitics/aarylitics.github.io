@@ -1,16 +1,13 @@
-# title: Aaryan Sharma
+title: Aaryan Sharma
 # logo:
-# description: aspiring data scientist!
-# show_downloads: yes
-# remote_theme: jekflix
+description: aspiring data scientist!
+show_downloads: yes
+remote_theme: jekflix
 #remote_theme: pages-themes/dinky@v0.2.0
 
 
 # Site Settings
 name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
 tags:
   - blog
   - template
