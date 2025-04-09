@@ -19,7 +19,7 @@ tags:
   - analytics
   - machine learning
 favicon: 'assets/images/aaryan_photo.png'
-#baseurl: /mediumish-theme-jekyll
+baseurl: /blog
 #google_analytics: 'UA-xxxxxxx-x'
 disqus: 'spicyhahaha'
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
