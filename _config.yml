@@ -1,4 +1,79 @@
-title: Aaryan Sharma Portfolio
-logo: aaryan_photo.jpeg
-description: Data Scientist looking for his first job
-theme: jekyll-theme-minimal
+# Site
+name: "Aarylitics"
+title: "Portfolio de Aaryan Sharma"
+description: "A portfolio consisting of my works and recipes as a data scientist and home cook"
+logo: 'assets/images/aaryan_photo.png'
+tags:
+  - blog
+  - aaryan
+  - aaryan sharma
+  - sharma
+  - data
+  - science
+  - recipe
+  - fun
+  - data science
+  - food
+  - data
+  - science
+  - analytics
+  - machine learning
+favicon: 'assets/images/aaryan_photo.png'
+#baseurl: /mediumish-theme-jekyll
+#google_analytics: 'UA-xxxxxxx-x'
+disqus: 'spicyhahaha'
+#mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+include: ["_pages"]
+permalink: /:title/
+
+# Authors
+authors:
+  Aaryan:
+    name: Aaryan
+    display_name: Aaryan
+    gravatar: 382f73290e0abfb2ada15d4f8cf7f8fa
+    email: sharma.aaryan333@gmail.com
+    linkedin: https://www.linkedin.com/in/aaryansharma/
+    instagram: https://www.instagram.com/_aaryansharma_/
+    github: https://github.com/Aarylitics
+    description: "An aspiring data scientist looking for his first job!"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+    
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    
+# Pagination 
+paginate: 6
+paginate_path: /page:num/
+    
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+# adsense: "disabled"
+# adsense-data-ad-client: "ca-pub-3412143450191416"
+# adsense-data-ad-slot: "1363087678"
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "disabled"
+
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]

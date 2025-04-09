@@ -1,0 +1,70 @@
+---
+layout: default
+title: Home
+---
+
+{% if page.url == "/" %}
+
+<!-- Featured
+================================================== -->
+<section class="featured-posts">
+    <div class="section-title">
+        <h2><span>Featured</span></h2>
+    </div>
+    <div class="row">
+
+    {% for post in site.posts %}
+
+        {% if post.featured == true %}
+
+            {% include featuredbox.html %}
+
+        {% endif %}
+
+    {% endfor %}
+
+    </div>
+</section>
+
+{% endif %}
+
+<!-- Projects
+================================================== -->
+<section class="recent-posts">
+  <div class="section-title">
+    <h2><span>Projects</span></h2>
+  </div>
+  <div class="row listrecent">
+    {% for post in site.posts %}
+      {% if post.categories contains "project" %}
+        {% include postbox.html post=post %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Recipes
+================================================== -->
+<section class="recent-posts">
+  <div class="section-title">
+    <h2><span>Recipes</span></h2>
+  </div>
+  <div class="row listrecent">
+    {% for post in site.posts %}
+      {% if post.categories contains "recipe" %}
+        {% include postbox.html post=post %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- Pagination
+================================================== -->
+<div class="bottompagination">
+<div class="pointerup"><i class="fa fa-caret-up"></i></div>
+<span class="navigation" role="navigation">
+    {% include pagination.html %}
+</span>
+</div>
+
