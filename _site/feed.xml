@@ -3,17 +3,129 @@
   <channel>
     <title>Portfolio de Aaryan Sharma</title>
     <description>A portfolio consisting of my works and recipes as a data scientist and home cook</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Apr 2025 09:29:24 -0400</pubDate>
-    <lastBuildDate>Wed, 09 Apr 2025 09:29:24 -0400</lastBuildDate>
+    <link>http://localhost:4000/blog/</link>
+    <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 09 Apr 2025 20:46:31 -0400</pubDate>
+    <lastBuildDate>Wed, 09 Apr 2025 20:46:31 -0400</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
+        <title>Consulting a Local Program at NC State</title>
+        <description>&lt;p style=&quot;color:rgb(119, 117, 117);&quot;&gt;&lt;i&gt;&lt;strong&gt; Project Timeline: &lt;/strong&gt; January 2024 to May 2024 (5 Months)&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;Prior to the completion of my undergraduate degree, I had the wonderful task of working alongside 4 future data professionals/consultants on an analytical practicum project for the Agricultural Institute at NC State University.&lt;/p&gt;
+
+&lt;p&gt;Not only was this project one of the most important projects in my undergrad, it was also one of my first real client-facing projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Agenda for this article:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Scope and Data Cleaning&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Marketing Dashboard&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Machine Learning Model and Deployment&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Working with a Client&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;What I have learned&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Let’s get into it!&lt;/p&gt;
+
+&lt;h1 style=&quot;color:rgb(166, 15, 15);&quot;&gt;Key Takeaways&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Consulting clients using data-related insights&lt;/li&gt;
+  &lt;li&gt;Working with Tableau to create a marketing dashboard&lt;/li&gt;
+  &lt;li&gt;utilizing NLP to understand retention and education value at a deeper level&lt;/li&gt;
+  &lt;li&gt;Working on a client-facing project&lt;/li&gt;
+  &lt;li&gt;Creating and deploying a machine learning model&lt;/li&gt;
+  &lt;li&gt;Personal Growth&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 style=&quot;color:rgb(166, 15, 15);&quot;&gt;Scope and Data Cleaning&lt;/h1&gt;
+
+&lt;p&gt;To assist AGI in their future pathway of improvement, my team was tasked with the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Identify key recruiting metrics and further analysis&lt;/li&gt;
+  &lt;li&gt;Determine the post-grad value of AGI&lt;/li&gt;
+  &lt;li&gt;Create forecasting tool for retention and students of concern&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To ensure we understood what the client specifically wanted, we set up 2 meetings – a kickoff and a follow-up – to obtain a great understanding of the project. Without a good understanding, are you really going to provide value? (Answer is no.)&lt;/p&gt;
+
+&lt;p&gt;From this meeting, we found out that the client wanted to see where majority of their students come in from, demographic and application wise, where their alumni are currently working at, what students and alumni have to say about the program, and most importantly, a tool that allows staff and faculty to be more hands-on with their students and intervene with at-risk students in hopes of increasing student retentions (outlier detection).&lt;/p&gt;
+
+&lt;p&gt;With this information, we were given our fair share of data and knew exactly how to attack the problem. With our problem in mind, we did EDA on all data files to ensure all files were useful and ensured unnecessary files did not take up our storage.&lt;/p&gt;
+
+&lt;p&gt;However, our data came with some integrity issues.&lt;/p&gt;
+
+&lt;p&gt;For starters, our data came with Personally Identifiable Information (PII). As any data scientist knows, PII is something that should be avoided to reduce data concerns for individuals in the dataset. Additionally, bias can arise from PII.&lt;/p&gt;
+
+&lt;p&gt;The data we obtained was enough for 2 semesters worth of students, which is not enough for my team to conduct a forecasting or outlier detection tool. With these issues arising, we talked to our sponsor and increased the number of observations we had, ensuring that we can at least make a framework and play around with the data. However, our PII issue was never resolved, as I had no idea that this was a major issue while conducting this project.&lt;/p&gt;
+
+&lt;h1 style=&quot;color:rgb(166, 15, 15);&quot;&gt;Marketing Dashboard&lt;/h1&gt;
+
+&lt;p&gt;To assist the AGI in their marketing efforts, my team conducted statistical analysis and basic NLP on survey data from alumni, current students, and students that transferred/dropped out.&lt;/p&gt;
+
+&lt;p&gt;For statistical analysis, we conducted basic means and medians to obtain average salaries given their education concentration and their graduation year. Additionally, we looked at where survey takers found value in the program given professional and personal benefits. Our results can be seen in the powerpoint below! (Slide 23)&lt;/p&gt;
+
+&lt;p&gt;For basic NLP, we took to R and conducted term frequency analysis on key areas of our analysis, such as reasons why students decided not to attend the program, as well as the common job titles within alumni.&lt;/p&gt;
+
+&lt;p&gt;To ensure that our clients had updated material, our team created an updated flier and consolidated job-related material into a &lt;a href=&quot;https://public.tableau.com/views/AGI_Dashboard_Draft1_17442452104560/AGIDashboardHome?:language=en-US&amp;amp;:sid=&amp;amp;:redirect=auth&amp;amp;:display_count=n&amp;amp;:origin=viz_share_link&quot;&gt;Tableau dashboard&lt;/a&gt; in which they can follow our analysis and revert back to as a blueprint!&lt;/p&gt;
+
+&lt;h1 style=&quot;color:rgb(166, 15, 15);&quot;&gt;Machine Learning Model and Deployment&lt;/h1&gt;
+
+&lt;p&gt;In order to forecast and create an outlier detection tool for faculty and staff to intervene with students, our team decided that a clustering analysis would ensure that we find hidden components in why&lt;/p&gt;
+
+&lt;h1 style=&quot;color:rgb(166, 15, 15);&quot;&gt;Working with a Client&lt;/h1&gt;
+
+&lt;p&gt;Data came in 3 weeks later and 8 weeks later (given a 16 week course)&lt;/p&gt;
+
+&lt;h1 style=&quot;color:rgb(166, 15, 15);&quot;&gt;What I have learned&lt;/h1&gt;
+
+</description>
+        <pubDate>Wed, 09 Apr 2025 10:34:00 -0400</pubDate>
+        <link>http://localhost:4000/blog/agi/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/agi/</guid>
+        
+        
+        <category>project</category>
+        
+        <category>machine learning</category>
+        
+        <category>clustering</category>
+        
+        <category>higher education</category>
+        
+        <category>consulting</category>
+        
+        <category>practicum</category>
+        
+        <category>marketing</category>
+        
+        <category>tableau</category>
+        
+        <category>model deployment</category>
+        
+        <category>NLP</category>
+        
+      </item>
+    
+      <item>
         <title>Consulting a Local Cidery</title>
-        <description>&lt;p&gt;One impactful practicum project I had was my traditional and digital marketing practicum project.&lt;/p&gt;
+        <description>&lt;p style=&quot;color:rgb(119, 117, 117);&quot;&gt;&lt;i&gt;&lt;strong&gt; Project Timeline: &lt;/strong&gt; February 2024 to May 2024 (4 Months)&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;One impactful practicum project I had was my traditional and digital marketing practicum project.&lt;/p&gt;
 
 &lt;p&gt;Not only did my team help a local cidery, East Bower Cider Company &lt;em&gt;(EBCC)&lt;/em&gt;, learn more about how to optimize their advertising to their target segmentation, I personally learned how to navigate difficulties and time management in a team setting. Let’s dive deeper!!&lt;/p&gt;
+
+&lt;h1 style=&quot;color: #129256;&quot;&gt;Key Takeaways&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Applying data science to a client-facing marketing-related project&lt;/li&gt;
+  &lt;li&gt;Utilizing NLP to enhance findings from a segmentation survey&lt;/li&gt;
+  &lt;li&gt;Working and leading a group to victory given multiple setbacks&lt;/li&gt;
+  &lt;li&gt;Creating business-level recommendations given data-powered insights&lt;/li&gt;
+  &lt;li&gt;Collating all information to put into an easy-to-digest powerpoint&lt;/li&gt;
+  &lt;li&gt;Personal growth!&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h1 style=&quot;color: #129256;&quot;&gt;East Bower Practicum Findings&lt;/h1&gt;
 
@@ -49,8 +161,8 @@
 
 &lt;p&gt;To figure out who our customers are at a psychographic and behavioral level, our team analyzed Qualtrics survey data to uncover common patterns and reveal key findings. Additionally, we looked through the profiles of individuals that currently interact with EBCC on social media to uncover findings the data might have missed. From this, we found that middle aged men and women alike were very recpetive to EBCC! The image down below showcases our personas.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/assets/images/ebcc-personas.png&quot; target=&quot;_blank&quot;&gt;
-  &lt;img src=&quot;/assets/images/ebcc-personas.png&quot; alt=&quot;EBCC Personas&quot; style=&quot;width:100%;max-width:600px;&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/blog/assets/images/ebcc-personas.png&quot; target=&quot;_blank&quot;&gt;
+  &lt;img src=&quot;/blog/assets/images/ebcc-personas.png&quot; alt=&quot;EBCC Personas&quot; style=&quot;width:100%;max-width:600px;&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 style=&quot;color: #d2691e;&quot;&gt;Social Media Interaction&lt;/h2&gt;
@@ -79,12 +191,12 @@
   &lt;li&gt;Customer takeovers and testimonionals - Social media users feel safer when someone just like them are urging them to come visit&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;/assets/images/customer-interaction-ebcc.png&quot; target=&quot;_blank&quot;&gt;
-  &lt;img src=&quot;/assets/images/customer-interaction-ebcc.png&quot; alt=&quot;Customer Interactions&quot; style=&quot;width:100%;max-width:600px;&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/blog/assets/images/customer-interaction-ebcc.png&quot; target=&quot;_blank&quot;&gt;
+  &lt;img src=&quot;/blog/assets/images/customer-interaction-ebcc.png&quot; alt=&quot;Customer Interactions&quot; style=&quot;width:100%;max-width:600px;&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/assets/images/ebcc-calendar.png&quot; target=&quot;_blank&quot;&gt;
-  &lt;img src=&quot;/assets/images/ebcc-calendar.png&quot; alt=&quot;EBCC Calendar&quot; style=&quot;width:100%;max-width:600px;&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/blog/assets/images/ebcc-calendar.png&quot; target=&quot;_blank&quot;&gt;
+  &lt;img src=&quot;/blog/assets/images/ebcc-calendar.png&quot; alt=&quot;EBCC Calendar&quot; style=&quot;width:100%;max-width:600px;&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 style=&quot;color: #d2691e;&quot;&gt;Project Conclusion&lt;/h2&gt;
@@ -131,8 +243,8 @@
 &lt;p&gt;This project showed me that although you will be in a group setting a majority of the time, that does not necessarily mean everyone will want to do the work assigned or be active. Sometimes stepping up is key, and speaking up goes a long way!&lt;/p&gt;
 </description>
         <pubDate>Tue, 08 Apr 2025 08:55:00 -0400</pubDate>
-        <link>http://localhost:4000/ebcc/</link>
-        <guid isPermaLink="true">http://localhost:4000/ebcc/</guid>
+        <link>http://localhost:4000/blog/ebcc/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/ebcc/</guid>
         
         
         <category>project</category>
@@ -149,11 +261,15 @@
         
         <category>marketing</category>
         
+        <category>consulting</category>
+        
       </item>
     
       <item>
         <title>Restaurant Review Dashboard</title>
-        <description>&lt;p&gt;Going out to dinner with some friends and you have no idea what to get? Well fret no longer!&lt;/p&gt;
+        <description>&lt;p style=&quot;color:rgb(119, 117, 117);&quot;&gt;&lt;i&gt;&lt;strong&gt; Project Timeline: &lt;/strong&gt; November 2024 to April 2025 (6 Months)&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;Going out to dinner with some friends and you have no idea what to get? Well fret no longer!&lt;/p&gt;
 
 &lt;p&gt;For the last 6 months, I have developed this &lt;a href=&quot;https://restaurant-reviews.streamlit.app&quot;&gt;semi-functioning dashboard application!&lt;/a&gt; Utilizing selenium and bs4, the user will input a Google Maps URL. For some amount of time, the application will scrape the reviews and return the following:&lt;/p&gt;
 
@@ -178,8 +294,8 @@
 &lt;p&gt;Code for my project can be found on &lt;a href=&quot;https://github.com/Aarylitics/restaurant_review_dashboard&quot;&gt;my github&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Apr 2025 16:43:00 -0400</pubDate>
-        <link>http://localhost:4000/restaurant-review-dashboard/</link>
-        <guid isPermaLink="true">http://localhost:4000/restaurant-review-dashboard/</guid>
+        <link>http://localhost:4000/blog/restaurant-review-dashboard/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/restaurant-review-dashboard/</guid>
         
         
         <category>project</category>
@@ -195,6 +311,8 @@
         <category>streamlit</category>
         
         <category>food</category>
+        
+        <category>model deployment</category>
         
       </item>
     

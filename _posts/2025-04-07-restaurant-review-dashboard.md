@@ -2,12 +2,14 @@
 layout: post
 title:  "Restaurant Review Dashboard"
 author: Aaryan
-categories: [project, side project, web scraping, machine learning, NLP, streamlit, food]
+categories: [project, side project, web scraping, machine learning, NLP, streamlit, food, model deployment]
 date: 2025-04-07 20:43:00 +0000
 image: 'assets/images/food-dashboard.png'
 featured: true
 comments: true
 ---
+
+<p style = "color:rgb(119, 117, 117);"><i><strong> Project Timeline: </strong> November 2024 to April 2025 (6 Months)</i></p>
 
 Going out to dinner with some friends and you have no idea what to get? Well fret no longer! 
 
