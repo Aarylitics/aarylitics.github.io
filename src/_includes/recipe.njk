@@ -1,0 +1,116 @@
+---
+layout: base.njk
+---
+<div class="detail-header">
+  <a class="back-link" href="{{ '/personal/' | url }}">← BACK TO RECIPES</a>
+  <h1>{{ title }}</h1>
+</div>
+
+{% if image %}
+<img src="{{ image | url }}" alt="{{ title }}" class="header-image">
+{% endif %}
+
+{% if content %}
+<div class="story">
+  {{ content | safe }}
+</div>
+{% endif %}
+
+<div class="recipe-card">
+  <div class="recipe-top">
+    <div class="recipe-top-stats">
+      <div><span>PREP</span><b>{{ prep }}</b></div>
+      <div><span>COOK</span><b>{{ cook }}</b></div>
+      <div><span>TOTAL</span><b>{{ total }}</b></div>
+      <div><span>DIFFICULTY</span><b>{{ difficulty }}</b></div>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨 PRINT RECIPE</button>
+  </div>
+
+  <div class="ing-cols">
+    {% for group in ingredientGroups %}
+    <div>
+      <h4>{{ group.heading }}</h4>
+      <ul>
+        {% for i in group.items %}
+        <li><b>{{ i.amount }}</b> {{ i.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+
+  <ol class="method-list">
+    {% for step in method %}
+    <li>
+      <div class="method-num">{{ loop.index }}</div>
+      <div class="method-body">
+        <h5>{{ step.title }}</h5>
+        <p>{{ step.text }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+
+  {% if notes %}
+  <div class="notes-box">
+    <b>COOK'S NOTES</b>
+    {{ notes }}
+  </div>
+  {% endif %}
+
+  <div class="tags">
+    {% for t in stack %}<span class="tag">{{ t }}</span>{% endfor %}
+  </div>
+</div>
+
+{% if attachments and attachments.length %}
+<div class="section-head" style="margin-top:44px;">
+  <h2 style="font-size:18px;">Appendix</h2>
+</div>
+{% for att in attachments %}
+{% set ext = att.file | fileExt %}
+<div class="section-head" style="margin-top:24px; margin-bottom:12px;">
+  <h3 style="font-family:var(--serif); font-weight:500; font-size:16px; margin:0;">{{ att.title }}</h3>
+  <a class="read" href="{{ att.file | url }}" target="_blank" rel="noopener">OPEN FULL ↗</a>
+</div>
+
+{% if ext == 'pdf' %}
+<div class="resume-preview" id="preview-att{{ loop.index }}">
+  <iframe src="{{ att.file | url }}#toolbar=0&navpanes=0&view=FitH" title="{{ att.title }}"></iframe>
+  <div class="resume-fade"></div>
+</div>
+<button class="expand-btn" id="expand-att{{ loop.index }}" onclick="toggleFilePreview('att{{ loop.index }}')">Show full preview ↓</button>
+
+{% elif ext in ['pptx','ppt','docx','doc','xlsx','xls'] %}
+<div class="resume-preview" id="preview-att{{ loop.index }}">
+  <iframe src="https://view.officeapps.live.com/op/embed.aspx?src={{ (site.url + (att.file | url)) | urlencode }}" title="{{ att.title }}"></iframe>
+  <div class="resume-fade"></div>
+</div>
+<button class="expand-btn" id="expand-att{{ loop.index }}" onclick="toggleFilePreview('att{{ loop.index }}')">Show full preview ↓</button>
+<p style="font-family:var(--mono); font-size:10.5px; opacity:.5; margin-top:8px;">
+  Office documents only preview once the site is live — this stays blank on localhost.
+</p>
+
+{% else %}
+<p style="font-family:var(--mono); font-size:12px; opacity:.6;">
+  No inline preview available for .{{ ext }} files — use "Open full" above.
+</p>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% set others = collections.recipe | without(page.url) | limit(3) %}
+{% if others.length %}
+<div class="section-head" style="margin-top:24px;">
+  <h2 style="font-size:18px;">More recipes</h2>
+</div>
+<div class="more-grid">
+  {% for item in others %}
+  <a class="more-card" href="{{ item.url | url }}">
+    <b>{{ item.data.title }}</b>
+    <span>{{ item.data.total }}</span>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}

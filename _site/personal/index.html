@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaryan Sharma</title>
+<meta name="description" content="Dishes I&#39;ve cooked enough times to trust, written the way I actually cook them.">
+
+<!-- Open Graph / link-preview metadata. Per-page title & description above already
+     feed this, so sharing a specific case study or recipe link shows its own preview
+     instead of a generic homepage one. -->
+<meta property="og:title" content="Aaryan Sharma">
+<meta property="og:description" content="Dishes I&#39;ve cooked enough times to trust, written the way I actually cook them.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400..500&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/images/favicon.ico">
+</head>
+<body class="personal">
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <div class="name">AARYAN SHARMA</div>
+      <a class="about-link " href="/about/">ABOUT</a>
+    </div>
+    <div class="toggle">
+      <a href="/" class="">
+        PROFESSIONAL
+        <div class="preview-pop"><b>Data science, measured.</b>Case studies, models, and the numbers behind them.</div>
+      </a>
+      <a href="/personal/" class="active">
+        PERSONAL
+        <div class="preview-pop"><b>Recipes, tested.</b>Dishes I've cooked enough times to trust.</div>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+  <div class="eyebrow">View 01 / Personal</div>
+  <h1>Recipes,<br><em>tested.</em></h1>
+  <p class="sub">Dishes I've cooked enough times to trust, written the way I actually cook them.</p>
+  <div class="stat-row">
+    <div class="stat"><b>1</b><span>RECIPES POSTED</span></div>
+    <div class="stat"><b>3</b><span>CUISINES & CATEGORIES</span></div>
+    <div class="stat"><b>2026</b><span>ACTIVE</span></div>
+  </div>
+</section>
+
+<div class="section-head">
+  <h2>Recent recipes</h2>
+</div>
+<div class="controls-row">
+  <select id="tagSelect" class="control-select">
+    <option value="">All tags</option>
+  </select>
+  <select id="sortSelect" class="control-select">
+    <option value="newest">Newest first</option>
+    <option value="oldest">Oldest first</option>
+    <option value="az">A–Z</option>
+  </select>
+  <label class="filter">
+    <input type="checkbox" id="featOnly"> Featured only
+  </label>
+</div>
+<div id="tagChip" class="tag-chip" style="display:none;">
+  Filtered by <b id="tagChipLabel"></b>
+  <span id="clearTagChip">✕</span>
+</div>
+
+<div class="grid" id="cardGrid">
+  
+  <a class="card"
+     href="/personal/chipotle-black-bean-tacos/"
+     data-title="Chipotle Black Bean Tacos"
+     data-year="2026"
+     data-featured="true"
+     data-tags="Mexican|Vegetarian|Weeknight">
+    <div class="yr">2026</div>
+    <h3>Chipotle Black Bean Tacos</h3>
+    <p>Smoky, mashed black beans on charred tortillas with quick-pickled onion and cotija. Weeknight speed, weekend flavor.</p>
+    <div class="meta-strip">
+      <div><span>TOTAL TIME</span><b>25 min</b></div>
+      <div><span>SERVES</span><b>4</b></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Mexican</span><span class="tag">Vegetarian</span><span class="tag">Weeknight</span>
+    </div>
+    <div class="topics">TOPICS: Beans, Tacos, Quick</div>
+    <span class="read">READ MORE →</span>
+  </a>
+  
+</div>
+
+</main>
+
+<footer class="wrap">
+  © NaN Aaryan Sharma
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

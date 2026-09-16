@@ -1,0 +1,65 @@
+---
+layout: base.njk
+title: null
+section: professional
+description: Case studies with the problem, the approach, and the numbers that actually moved.
+eleventyExcludeFromCollections: true
+---
+{%- set cs = collections.casestudy -%}
+
+<section class="hero">
+  <div class="eyebrow">View 01 / Professional</div>
+  <h1>Data science,<br><em>measured.</em></h1>
+  <p class="sub">Case studies with the problem, the approach, and the numbers that actually moved.</p>
+  <div class="stat-row">
+    <div class="stat"><b>{{ cs.length }}</b><span>CASE STUDIES</span></div>
+    <div class="stat"><b>{{ cs | countUniqueTopics }}</b><span>TOPICS</span></div>
+    <div class="stat"><b>{{ cs | yearRange }}</b><span>ACTIVE</span></div>
+  </div>
+</section>
+
+<div class="section-head">
+  <h2>Selected case studies</h2>
+</div>
+<div class="controls-row">
+  <select id="tagSelect" class="control-select">
+    <option value="">All tags</option>
+  </select>
+  <select id="sortSelect" class="control-select">
+    <option value="newest">Newest first</option>
+    <option value="oldest">Oldest first</option>
+    <option value="az">A–Z</option>
+  </select>
+  <label class="filter">
+    <input type="checkbox" id="featOnly"> Featured only
+  </label>
+</div>
+<div id="tagChip" class="tag-chip" style="display:none;">
+  Filtered by <b id="tagChipLabel"></b>
+  <span id="clearTagChip">✕</span>
+</div>
+
+<div class="grid" id="cardGrid">
+  {% for item in cs %}
+  <a class="card"
+     href="{{ item.url | url }}"
+     data-title="{{ item.data.title }}"
+     data-year="{{ item.data.year }}"
+     data-featured="{{ item.data.featured }}"
+     data-tags="{{ item.data.stack | join('|') }}">
+    <div class="yr">{{ item.data.year }}</div>
+    <h3>{{ item.data.title }}</h3>
+    <p>{{ item.data.description }}</p>
+    <div class="meta-strip">
+      {% for s in item.data.stats %}
+      <div><span>{{ s.label | upper }}</span><b>{{ s.value }}</b></div>
+      {% endfor %}
+    </div>
+    <div class="tags">
+      {% for t in item.data.stack %}<span class="tag">{{ t }}</span>{% endfor %}
+    </div>
+    <div class="topics">TOPICS: {{ item.data.topics }}</div>
+    <span class="read">READ MORE →</span>
+  </a>
+  {% endfor %}
+</div>

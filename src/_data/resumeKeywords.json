@@ -1,0 +1,21 @@
+{
+  "python": "Python",
+  "sql": "SQL",
+  "\\br\\b": "R",
+  "nlp": "NLP",
+  "a/b testing": "A/B Testing",
+  "time series": "Time Series Forecasting",
+  "machine learning": "Machine Learning",
+  "tableau": "Tableau",
+  "aws": "AWS",
+  "snowflake": "Snowflake",
+  "docker": "Docker",
+  "etl": "ETL",
+  "bayesian": "Bayesian Methods",
+  "regression": "Regression",
+  "statistical inference": "Statistical Inference",
+  "web scraping": "Web Scraping",
+  "excel": "Excel",
+  "qgis": "QGIS",
+  "spss": "SPSS"
+}

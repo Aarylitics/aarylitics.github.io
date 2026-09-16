@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scraping Reviews to Optimize Dining — Aaryan Sharma</title>
+<meta name="description" content="A review-scraping pipeline that surfaces diner sentiment, most-discussed dishes, and topics in one dashboard.">
+
+<!-- Open Graph / link-preview metadata. Per-page title & description above already
+     feed this, so sharing a specific case study or recipe link shows its own preview
+     instead of a generic homepage one. -->
+<meta property="og:title" content="Scraping Reviews to Optimize Dining — Aaryan Sharma">
+<meta property="og:description" content="A review-scraping pipeline that surfaces diner sentiment, most-discussed dishes, and topics in one dashboard.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400..500&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/images/favicon.ico">
+</head>
+<body class="professional">
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <div class="name">AARYAN SHARMA</div>
+      <a class="about-link " href="/about/">ABOUT</a>
+    </div>
+    <div class="toggle">
+      <a href="/" class="active">
+        PROFESSIONAL
+        <div class="preview-pop"><b>Data science, measured.</b>Case studies, models, and the numbers behind them.</div>
+      </a>
+      <a href="/personal/" class="">
+        PERSONAL
+        <div class="preview-pop"><b>Recipes, tested.</b>Dishes I've cooked enough times to trust.</div>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="detail-header">
+  <a class="back-link" href="/">← BACK TO CASE STUDIES</a>
+  <div class="eyebrow">2025</div>
+  <h1>Scraping Reviews to Optimize Dining</h1>
+</div>
+
+
+<img src="/assets/images/food-dashboard.png" alt="Scraping Reviews to Optimize Dining" class="header-image">
+
+
+<div class="story">
+  <p>A Google Reviews scraping pipeline that derives diner sentiment, most-talked-about dishes, and topics in one hub.</p>
+<h2>The problem</h2>
+<p>My goal when dining out is to maximize the taste and overall enjoyment I get from every dollar I spend. However menus can be super extensive in their offerings, making my decision-making very indecisive, aka, I want to try everything! But this is not doable, as I do not have unlimited money and unlimited stomach space (or can eat unlimited calories, but that would be pretty cool).</p>
+<p>Now while products, such as Google Maps, Yelp, and now Beli, showcase to users photos and main dishes, they are not fully encompasing and limited in what their analytics can provide. Google Maps shows popular dishes and sentiments in the forms of reviews. However, it does not track sentiment of a place over time and the popular dishes. While the popular dishes is helpful, I have found their to be a discrepency between their listed dishes and the dishes that people talk about. Yelp, as similar as it to Google Maps, is typically reviewed by people at the higher extremes. Implemented in Yelp is some sort of localized bias. And then for Beli, you see photos of said dishes and then an average score and a recommended rating, however, both ratings are not accurate and have a lot of work needed with.</p>
+<p>The goal of this is to bridge the 3 sites and their analytics into one powerhouse of a dashboard. I will say, that although this project is not fully finished and still needs work on, getting to that stage gets closer day-by-day.</p>
+<h2>The approach</h2>
+<p>In order to gather the data needed before I dine, I have to webscrape Google reviews from my target restaurant. Utilizing BeautifulSoup (BS4) and Selenium, this was achievable. With this data I could gather basic facts about a restaurant, such as what cuisine it was and how many ratings it had. But next I had to isolate reviews and clean them up for Natural Language Processing (NLP) to gather sentiment, key topics, and popular dishes.</p>
+<p>After cleaning up reviews I utilized NLTK's Vader to pick up sentiment score based on the number of stars the user gave. For example, if it was a one star, I would give a heavier weight to the negative sentiment score and vice versa. With this, I was able to plot the average sentiment against the average rating for the restaurant over time, showcasing if there was an increase or decrease in the establishments reviews, and thus, their quality. Congruently, I utilized BERTopic to gather main topics about the restaurant. I will spare the technical jargon, but would love to chat about it more! Furthermore, I can disect key topics given the star rating and a sentiment range. This allows me to isolate the negative reviews and see what people are specifically saying within it.</p>
+<p>But the job is not done. Next I used NLTK's frequent distribution package to gather most frequent words and word pairings at the 2nd, 3rd, and 4th level. Seeing the top frequent word pairs gives our analysis more weight in what the restaurant has to offer, allowing individuals to make more concise decisions. Furthermore, I can gather the top ordered dishes and the frequency of them. But in this case, I am also making the assumption that more ordered dishes = the better option. In some instances, a dish can be really bad and then can be negatively reviewed. One thing I am currently working on is getting topics and sentiment for each specific dish to make that decision making more true and seamless.</p>
+<p>After this, I can use association rules to conduct an association analysis, a data minining technique that looks at frequent pairings for cross-selling purposes. In ths case, it can be used to see what dishes are ordered together for the most part and essentially pick your course for you, from drinks to dessert.</p>
+<p>Once I had all of this information, I then engineered and deployed a streamlit production pipeline, containerizing my code and with Docker and CI/CD.</p>
+<h2>The result</h2>
+<p>At the end of the day, I was able to go out and eat with confidence, knowing that I am dining at the right establishement and ordering the correct dishes. Aside from personal enjoyment, I learned more on webscraping, saw the ins and outs of NLP, and learned how to put a model into production!</p>
+
+</div>
+
+
+<div class="meta-strip">
+  
+  <div><span>MEALS EATEN</span><b>40+</b></div>
+  
+  <div><span>POUNDS GAINED</span><b>~10+</b></div>
+  
+</div>
+
+
+<div class="tags">
+  <span class="tag">Python</span><span class="tag">BS4</span><span class="tag">NLTK</span><span class="tag">BERT</span><span class="tag">Selenium</span><span class="tag">Association Analysis</span>
+</div>
+<div class="topics">TOPICS: NLP, Topic Clustering, Webscraping, Side Project, Data Mining</div>
+
+
+
+<p style="font-family:var(--mono); font-size:11px; opacity:.5; margin-top:32px;">Published March 14, 2025</p>
+
+
+
+<div class="section-head" style="margin-top:24px;">
+  <h2 style="font-size:18px;">More case studies</h2>
+</div>
+<div class="more-grid">
+  
+  <a class="more-card" href="/professional/marketing-research-small-business/">
+    <b>Marketing Research for a Small Business</b>
+    <span>2022</span>
+  </a>
+  
+  <a class="more-card" href="/professional/consulting-higher-ed/">
+    <b>Consulting for Higher Ed</b>
+    <span>2024</span>
+  </a>
+  
+  <a class="more-card" href="/professional/local-cidery-marketing/">
+    <b>Local Cidery Marketing Consulting</b>
+    <span>2024</span>
+  </a>
+  
+</div>
+
+
+</main>
+
+<footer class="wrap">
+  © NaN Aaryan Sharma
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

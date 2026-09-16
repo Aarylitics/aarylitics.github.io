@@ -1,0 +1,63 @@
+---
+layout: base.njk
+title: null
+description: Dishes I've cooked enough times to trust, written the way I actually cook them.
+eleventyExcludeFromCollections: true
+---
+{%- set rc = collections.recipe -%}
+
+<section class="hero">
+  <div class="eyebrow">View 01 / Personal</div>
+  <h1>Recipes,<br><em>tested.</em></h1>
+  <p class="sub">Dishes I've cooked enough times to trust, written the way I actually cook them.</p>
+  <div class="stat-row">
+    <div class="stat"><b>{{ rc.length }}</b><span>RECIPES POSTED</span></div>
+    <div class="stat"><b>{{ rc | countUniqueTopics }}</b><span>CUISINES & CATEGORIES</span></div>
+    <div class="stat"><b>{{ rc | yearRange }}</b><span>ACTIVE</span></div>
+  </div>
+</section>
+
+<div class="section-head">
+  <h2>Recent recipes</h2>
+</div>
+<div class="controls-row">
+  <select id="tagSelect" class="control-select">
+    <option value="">All tags</option>
+  </select>
+  <select id="sortSelect" class="control-select">
+    <option value="newest">Newest first</option>
+    <option value="oldest">Oldest first</option>
+    <option value="az">A–Z</option>
+  </select>
+  <label class="filter">
+    <input type="checkbox" id="featOnly"> Featured only
+  </label>
+</div>
+<div id="tagChip" class="tag-chip" style="display:none;">
+  Filtered by <b id="tagChipLabel"></b>
+  <span id="clearTagChip">✕</span>
+</div>
+
+<div class="grid" id="cardGrid">
+  {% for item in rc %}
+  <a class="card"
+     href="{{ item.url | url }}"
+     data-title="{{ item.data.title }}"
+     data-year="{{ item.data.year }}"
+     data-featured="{{ item.data.featured }}"
+     data-tags="{{ item.data.stack | join('|') }}">
+    <div class="yr">{{ item.data.year }}</div>
+    <h3>{{ item.data.title }}</h3>
+    <p>{{ item.data.description }}</p>
+    <div class="meta-strip">
+      <div><span>TOTAL TIME</span><b>{{ item.data.total }}</b></div>
+      <div><span>SERVES</span><b>{{ item.data.serves }}</b></div>
+    </div>
+    <div class="tags">
+      {% for t in item.data.stack %}<span class="tag">{{ t }}</span>{% endfor %}
+    </div>
+    <div class="topics">TOPICS: {{ item.data.topics }}</div>
+    <span class="read">READ MORE →</span>
+  </a>
+  {% endfor %}
+</div>

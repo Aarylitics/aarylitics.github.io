@@ -1,0 +1,70 @@
+---
+layout: base.njk
+title: About
+section: about
+description: A bit about me, my resume, and the skills behind the work on this site.
+eleventyExcludeFromCollections: true
+---
+<div class="section-head" style="margin-top:40px;">
+  <h2>About me</h2>
+</div>
+
+<div class="about-grid">
+  <aside class="about-sidebar">
+    <div class="headshot">
+      <img src="{{ '/assets/images/aaryan_photo.jpg' | url }}" alt="{{ site.name }}">
+    </div>
+    <div class="sidebar-name">{{ site.name }}</div>
+    <div class="sidebar-title">{{ site.title }}</div>
+    <p class="sidebar-blurb">{{ site.sidebarBlurb }}</p>
+
+    <div class="sidebar-contact">
+      <p class="sidebar-cta">Feel free to reach out and connect! Open to Data Science roles.</p>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="{{ site.github }}" target="_blank" rel="noopener">GitHub ↗</a>
+      <span>{{ site.location }}</span>
+    </div>
+
+    <div class="sidebar-top-skills">
+      <div class="sidebar-label">Top skills</div>
+      {% for s in skills.top5 %}
+      <div class="skill {% if not s.hasProjects %}no-link{% endif %}">
+        {% if s.hasProjects %}
+        <a href="{{ '/' | url }}?tag={{ s.name }}" style="text-decoration:none; color:inherit; display:block;">
+        {% endif %}
+        <div class="skill-label"><span>{{ s.name }}</span></div>
+        <div class="meter"><div class="meter-fill" data-pct="{{ s.pct }}"></div></div>
+        {% if s.hasProjects %}</a>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </aside>
+
+  <div class="about-main">
+    <p class="sub" style="max-width:60ch;">{{ site.bio }}</p>
+
+    <div class="section-head" style="margin-top:44px;">
+      <h2 style="font-size:20px;">Resume</h2>
+      <a class="read" href="{{ '/assets/resume/Aaryan Sharma Master Resume.pdf' | url }}" target="_blank" rel="noopener">OPEN FULL RESUME ↗</a>
+    </div>
+    <div class="resume-preview" id="preview-resume">
+      <iframe id="resumeFrame" src="{{ '/assets/resume/Aaryan Sharma Master Resume.pdf' | url }}#toolbar=0&navpanes=0&view=FitH" title="Resume preview"></iframe>
+      <div class="resume-fade"></div>
+    </div>
+    <button class="expand-btn" id="expand-resume" onclick="toggleFilePreview('resume')">Show full preview ↓</button>
+
+    <div class="section-head" style="margin-top:52px;">
+      <h2 style="font-size:20px;">All skills</h2>
+    </div>
+    {% for s in skills.all %}
+    <div class="skill {% if not s.hasProjects %}no-link{% endif %}" {% if s.hasProjects %}onclick="window.location='{{ '/' | url }}?tag={{ s.name }}'"{% endif %}>
+      <div class="skill-label">
+        <span>{{ s.name }}</span>
+        <span class="count">{% if s.hasProjects %}{{ s.projects.length }} project{% if s.projects.length > 1 %}s{% endif %} →{% else %}from resume{% endif %}</span>
+      </div>
+      <div class="meter"><div class="meter-fill" data-pct="{{ s.pct }}"></div></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
